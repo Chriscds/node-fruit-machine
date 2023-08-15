@@ -1,14 +1,27 @@
-
-    
-
-// Spin fruit machine
 // Check if user wins
 // Update user balance
 // Play again?
 
     // Deposit funds
-
 const prompt = require("prompt-sync")();
+
+// global variables
+const ROWS = 3;
+const COLS = 3;
+const SYMBOLS_COUNT = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8,
+}
+// multiplier amount value
+const SYMBOL_VALUES = {
+    "A": 5,
+    "B": 4,
+    "C": 3,
+    "D": 2,
+}
+
 
 const deposit = () => {
     // loop infinatly with while loop set to true
@@ -27,9 +40,7 @@ const deposit = () => {
     }
 }
 };
-
     // Determine number of lines to bet on
-
 const getNumberOfLines = () => {
     while (true) {
 
@@ -46,7 +57,6 @@ const getNumberOfLines = () => {
         }
     }
 };
-
     // Collect bet amount
 const getBet = (balance, lines) => {
     while (true) {
@@ -64,7 +74,12 @@ const getBet = (balance, lines) => {
         }
     }
 };
+// Spin fruit machine
+const spin = () => {
+    
+}
 
+    // run functions
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
 const bet = getBet(balance, numberOfLines);
