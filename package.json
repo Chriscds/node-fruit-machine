@@ -1,0 +1,22 @@
+{
+  "name": "fruit-machine",
+  "version": "1.0.0",
+  "description": "prompt node fruit machine.",
+  "main": "fruit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chriscds/node-fruit-machine.git"
+  },
+  "author": "Chris Southon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chriscds/node-fruit-machine/issues"
+  },
+  "homepage": "https://github.com/Chriscds/node-fruit-machine#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
