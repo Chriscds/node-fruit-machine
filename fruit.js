@@ -9,17 +9,17 @@ const prompt = require("prompt-sync")();
 const ROWS = 3;
 const COLS = 3;
 const SYMBOLS_COUNT = {
-    "A": 2,
-    "B": 4,
-    "C": 6,
-    "D": 8,
+    A: 2,
+    B: 4,
+    C: 6,
+    D: 8,
 }
 // multiplier amount value
 const SYMBOL_VALUES = {
-    "A": 5,
-    "B": 4,
-    "C": 3,
-    "D": 2,
+    A: 5,
+    B: 4,
+    C: 3,
+    D: 2,
 }
 
 
@@ -76,10 +76,33 @@ const getBet = (balance, lines) => {
 };
 // Spin fruit machine
 const spin = () => {
-    
-}
+    const symbols = [];
+    // loop through all entries in SYMBOLS_COUNT
+    for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
+        // for loop to push symbols into the array of const symbols
+        for (let i = 0; i < count; i++) {
+            symbols.push(symbol);
+        }
+    }
 
+    const reels = [[], [], []];
+    // while i is < than the amount of COLS keep looping through, then increment i by 1
+    for (let i =0; i < COLS; i++) {
+        const reelSymbols = [...symbols];
+        for (let j = 0; j < ROWS; j++) {
+            const randomIndex = Math.floor(Math.random() * reelSymbols.length); 
+            const selectedSymbol = reelSymbols[randomIndex];
+            reels[i].push(selectedSymbol);
+            reelSymbols.splice(randomIndex, 1);
+        }
+    }
+
+    return reels;
+
+};
     // run functions
+const reels = spin();
+console.log(reels);
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
 const bet = getBet(balance, numberOfLines);
