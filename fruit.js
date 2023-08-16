@@ -69,7 +69,7 @@ const getBet = (balance, lines) => {
         }
     }
 };
-// Spin fruit machine
+    // Spin fruit machine
 const spin = () => {
     const symbols = [];
     // loop through all entries in SYMBOLS_COUNT
@@ -102,7 +102,7 @@ const spin = () => {
     return reels;
 
 };
-
+    // transpose to help check if results are true in console
 const transpose = (reels) => {
     const rows = [];
 
@@ -130,7 +130,7 @@ const printRows = (rows) => {
         console.log(rowString);
     }
 }
-// Check if user wins
+    // Check if user wins
 const getWinnings = (rows, bet, lines) => {
     let winnings =0;
 
@@ -154,7 +154,7 @@ const getWinnings = (rows, bet, lines) => {
 };
 
 const game = () =>  {
-        // run functions
+
     let balance = deposit();
 
     while (true) {
@@ -170,14 +170,14 @@ const game = () =>  {
         // Update user balance
         balance += winnings;
         console.log("You won, £" + winnings.toString());
-
+        // if balance is 0 player loses
         if (balance <= 0) {
             console.log("Ooops, you have run out of money!");
             break;
         }
-        // Play again?
+        // ask to play again?
         const playAgain = prompt("Would you like to play again? (y/n)? ")
-
+        // if playAgain is no equal to "y", then end game
         if (playAgain != "y") break;
 
         }
