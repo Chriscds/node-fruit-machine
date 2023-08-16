@@ -169,7 +169,8 @@ const game = () =>  {
         const winnings = getWinnings(rows, bet, numberOfLines);
         // Update user balance
         balance += winnings;
-        console.log("You won, £" + winnings.toString());
+        console.log("You won: £" + winnings.toString() + " ," + "Your new balance is £" + balance);
+        // console.log("Balance:" + balance);
         // if balance is 0 player loses
         if (balance <= 0) {
             console.log("Ooops, you have run out of money!");
