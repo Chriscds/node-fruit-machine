@@ -85,14 +85,20 @@ const spin = () => {
         }
     }
 
+    // each nested array is a column
     const reels = [[], [], []];
     // while i is < than the amount of COLS keep looping through, then increment i by 1
     for (let i =0; i < COLS; i++) {
+        // added all available symbols into reelSymbols using spread operator
         const reelSymbols = [...symbols];
+        // nested for loop because we are using a nested array
         for (let j = 0; j < ROWS; j++) {
+            // generate a random index from reelSymbols times by lenght and minus one
             const randomIndex = Math.floor(Math.random() * reelSymbols.length); 
             const selectedSymbol = reelSymbols[randomIndex];
+            // push selectedSymbol into the index of reels
             reels[i].push(selectedSymbol);
+            // remove 1 element from the randomIndex so it is not selected again while generating reel
             reelSymbols.splice(randomIndex, 1);
         }
     }
